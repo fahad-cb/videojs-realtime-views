@@ -1,4 +1,4 @@
-# videojs-realtime-views
+# Videojs Realtime Views
 This plugin adds an option in player controls to see realtime views for a video
 
 ## Scoket Server
