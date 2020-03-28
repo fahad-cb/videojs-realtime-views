@@ -1,3 +1,10 @@
+/**
+  *
+  * @method  : Class Views {}
+  * @params  : (player,options)
+  * @author  : <adventivepk@gmail.com> <Fahad Abbas>
+  * @since   : 28/03/2020
+*/
 class Views {
 
   //constructing class
@@ -11,6 +18,13 @@ class Views {
     
   }
 
+  /**
+    *
+    * @method  : createViewsComponent() this method creates and register ViewsComponents for videojs player
+    * @params  : (player,options)
+    * @since   : 28/03/2020
+    * @returns : null
+  */
   createViewsComponent = () => {
     //registerring component
     var component = videojs.getComponent('Component');
@@ -38,21 +52,37 @@ class Views {
     controlBar.el().insertBefore(viewsControl.el(), fullscreenToggle.el());
   }
 
-  // connecting socket 
+  /**
+    *
+    * @method  : connectSocket() this method creates connection with socket server
+    * @params  : ()
+    * @since   : 28/03/2020
+    * @uses    : sendMessage() , pageView()
+  */
   connectSocket = () => {
     this.socket = io.connect('http://'+this.options.host+':'+this.options.port);
     this.sendMessage();
     this.pageView();
   }
 
-  // listen connection event
+  /**
+    *
+    * @method  : sendMessage() this method sends message to socket server on connection while listening connection
+    * @params  : ()
+    * @since   : 28/03/2020
+  */
   sendMessage = () => {
     this.socket.on('connect', () => {
       this.socket.send(window.location);
     });
   }
 
-  // listen listeniing page view event
+  /**
+    *
+    * @method  : sendMessage() this method listens pageview event, emitted by socket server
+    * @params  : ()
+    * @since   : 28/03/2020
+  */
   pageView = () => {
     this.socket.on('pageview', (message) => {
       this.connections = message.connections;
@@ -63,7 +93,12 @@ class Views {
   
 }
 
-// plugin base functions
+/**
+    *
+    * @method  : realtimeViews() videojs plugin initilization
+    * @params  : ()
+    * @since   : 28/03/2020
+  */
 function realtimeViews(options){
   new Views(this,options);
 }
