@@ -1,7 +1,7 @@
 # videojs-realtime-views
 
 # videojs-series-plugin
-This plugin creates a series episodes switch button very swiftly (just like netflix player)
+This plugin adds an option in player controls to see realtime views for a video
 
 ## Scoket Server
 Run socket server (socket.io required) 
