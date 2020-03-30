@@ -2,9 +2,12 @@
 This plugin adds an option in player controls to see realtime views for a video
 
 # Presequites
- nodejs
- 
- socket.io
+```bash 
+nodejs
+```
+```bash
+socket.io
+```
 
 
 ## Scoket Server
