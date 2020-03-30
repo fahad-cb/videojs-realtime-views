@@ -1,6 +1,12 @@
 # Videojs Realtime Views
 This plugin adds an option in player controls to see realtime views for a video
 
+# Presequites
+ nodejs
+ 
+ socket.io
+
+
 ## Scoket Server
 Run socket server (socket.io required) 
 ```node
